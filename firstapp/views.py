@@ -4,12 +4,11 @@ from django.http import HttpResponseBadRequest, HttpResponseForbidden
 # Create your views here.
 
 def index(request):
-    return HttpResponse("<h1>Main Menu</h1>")
+    return render(request, "index.html")
 def about(request):
     return HttpResponse("<h1>About Me</h1>")
 def content(request):
-    return HttpResponseRedirect("/about")
-    #return HttpResponse("<h1>Content</h1>")
+    return HttpResponse("<h1>Content</h1>")
 def products(request, product_id=1):
     category = request.GET.get("cat", "Not Identified")
     output = "<h2>Product # {0}, Category: {1}</h2>".format(product_id, category)
