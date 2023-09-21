@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Привет Django!</title>
+  </head>
+<body>
+  <h1>{{ header }}</h1>
+  <p>My Name is {{user.name}} and Age is {{user.age}} </p>
+  <p>My addresses are {{addr.0}} and {{addr.1}}</p>
+  <p>I know several languages. There is {{langs.0}}, {{langs.1}}, {{langs.2}}</p>
+
+  {% for lang in langs %}
+    <li>{{lang}}</li>
+  {% endfor %}
+
+  <li>{{value_num|add:"2"}}</li>
+  <li>{{value_date|date:"D m M Y"}}</li>
+  <li>{{value_time|time:"H:i"}}</li>
+  <li>{{value_title|title}}</li>
+
+</body>
+</html>
